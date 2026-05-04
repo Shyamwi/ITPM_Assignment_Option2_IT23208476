@@ -2,11 +2,6 @@
 __pycache__/
 *.py[cod]
 
-# Test Results
-results/
-execution_results.csv
-sample.png
-
 # IDEs and environments
 .vscode/
 .idea/
