@@ -1,70 +1,177 @@
-# UI Test Automation
+# IT23208476 - Pixelssuite Functional & Usability Testing
 
-This project contains an automated UI test script using Python and Playwright. The script, `image_preview_test.py`, tests the file upload and image preview functionality on a web application.
+## 📌 Assignment Details
 
-## Prerequisites
+* **Module:** IT3040 – IT Project Management (ITPM)
+* **Assignment:** Assignment 1 – Option 2
+* **Student ID:** IT23208476
+* **Objective:**
+  This project evaluates the **functional correctness and usability** of the Pixelssuite website by testing its key features under both valid and invalid conditions.
 
-- Python 3.8 or higher installed on your system.
-- Basic understanding of command-line execution.
+---
 
-## Installation
+## 🌐 Website Under Test
 
-1. **Navigate to the project directory** (if you aren't already there):
-   ```powershell
-   cd d:\test_automation_ui
-   ```
+🔗 https://www.pixelssuite.com/
 
-2. **Install the required Python dependencies:**
-   ```powershell
-   pip install -r requirements.txt
-   ```
-   *(This will install Playwright. Alternatively, you can just run `pip install playwright`)*
+---
 
-3. **Install Playwright browsers:**
-   Playwright requires specific browser binaries to run. Install them by running:
-   ```powershell
-   playwright install
-   ```
+## 🎯 Features Tested
 
-## Running the Tests
+The following features of the application were tested:
 
-The `image_preview_test.py` script can be executed from the command line. It has several configurable arguments.
+1. Document Conversion
+2. PDF Editing
+3. Image Resizing
+4. Cropping
+5. Compression
+6. Image Format Conversion
+7. Meme Generation
+8. Color Picker
+9. Image Rotation
+10. Image Flipping
 
-### Basic Execution (Headless Mode)
+---
 
-To run the test silently without opening a visible browser window:
+## 🧪 Test Case Design
 
-```powershell
-python image_preview_test.py --headless
+* A total of **36 test cases** were created
+* Each feature includes:
+
+  * ✅ 1 Positive test case
+  * ❌ 2 Negative test cases
+
+### ✔ Test Coverage Includes:
+
+* Valid inputs
+* Invalid file types
+* Missing inputs
+* Edge cases
+* User interaction behavior
+
+---
+
+## 🤖 Test Automation
+
+### 🔹 Automated Scenario
+
+One test case was automated using **Playwright** to verify:
+
+✔ Image upload
+✔ Preview functionality
+✔ System response validation
+
+---
+
+## ⚙️ Technologies Used
+
+* **Python 3**
+* **Playwright**
+* **OpenPyXL**
+* **CSV for result recording**
+
+---
+
+## 📁 Project Structure
+
+```
+test_automation_ui/
+│
+├── image_preview_test.py        # Automation script
+├── execution_results.csv        # Test execution results
+├── sample.png                   # Sample input image
+├── results/
+│   └── preview_pass.png         # Screenshot of successful test
 ```
 
-### Visual Execution (Headed Mode)
+---
 
-To watch the test execute in a visible browser window, run it without the `--headless` flag. You can also add a delay (`--slow-mo-ms`) to slow down the interactions so they are easier to follow:
+## 🚀 How to Run the Automation
 
-```powershell
-python image_preview_test.py --slow-mo-ms 2000
+### 🔹 Step 1: Install Requirements
+
+```bash
+python -m pip install playwright openpyxl
+python -m playwright install
 ```
 
-### Available Command-Line Arguments
+---
 
-- `--url`: The target URL to test. (Default: `https://www.pixelssuite.com/convert-to-png`)
-- `--png`: Path to the image file to upload during the test. (Default: `sample.png` - will be auto-generated if it doesn't exist)
-- `--out-dir`: The directory where screenshots should be saved. (Default: `results\`)
-- `--csv`: The path to the CSV file where test execution results are logged. (Default: `execution_results.csv`)
-- `--headless`: Run the browser in headless mode (no visible UI).
-- `--timeout-ms`: Maximum time (in milliseconds) to wait for elements. (Default: `60000` / 1 minute)
-- `--slow-mo-ms`: Slow down Playwright operations by the specified amount of milliseconds. Useful for debugging or visual observation. (Default: `0`)
+### 🔹 Step 2: Navigate to Project Folder
 
-### Example: Running with Custom Parameters
-
-```powershell
-python image_preview_test.py --url "https://www.pixelssuite.com/convert-to-png" --headless --timeout-ms 30000 --out-dir custom_results
+```bash
+cd /d D:\test_automation_ui
 ```
 
-## Test Outputs
+---
 
-After a test execution, two types of artifacts are generated:
+### 🔹 Step 3: Run the Test
 
-1. **Screenshots:** Found in the `results\` directory (or your custom `--out-dir`). A screenshot is taken at the end of the test sequence. Look for `preview_pass.png` if the preview was detected, or `preview_fail.png` / `preview_error.png` if it wasn't.
-2. **Execution Logs:** The test results are appended to `execution_results.csv`. This file logs the file path, whether the preview was detected, the final PASS/FAIL status, and the path to the corresponding screenshot.
+```bash
+python image_preview_test.py --url "https://www.pixelssuite.com/convert-to-png" --slow-mo-ms 2000
+```
+
+---
+
+## 📊 Execution Results
+
+* **Preview Detected:** TRUE
+* **Status:** PASS
+* **Output File:** execution_results.csv
+* **Screenshot:** results/preview_pass.png
+
+---
+
+## 📷 Evidence
+
+The automation script captures a screenshot when the preview is successfully displayed.
+
+✔ Screenshot file:
+`results/preview_pass.png`
+
+---
+
+## 📌 Assumptions
+
+* The system should display a preview after uploading a valid PNG image
+* Supported formats include PNG, JPG, and WEBP
+* The preview section must accurately reflect the uploaded image
+
+---
+
+## ⚠️ Limitations
+
+* Backend API testing is not included
+* Performance and security testing are out of scope
+* Automation focuses only on preview functionality
+
+---
+
+## ✅ Conclusion
+
+The testing process confirmed that:
+
+* Core features of the Pixelssuite application function correctly
+* The preview functionality operates as expected
+* Minor usability improvements can be considered for better user feedback
+
+---
+
+## 🔗 Repository Link
+
+(Add your GitHub repository link here)
+
+---
+
+## 📦 Submission Includes
+
+* ✔ Manual Test Cases (Excel File)
+* ✔ Automation Script (Playwright Project)
+* ✔ execution_results.csv
+* ✔ GitHub Repository
+
+---
+
+## 👨‍💻 Author
+
+**IT23208476**
